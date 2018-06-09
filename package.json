@@ -1,0 +1,46 @@
+{
+  "name": "organizer",
+  "version": "1.0.0",
+  "description": "Le but est de réaliser un organiseur pour gérer son argent.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "createDb": "babel-node ./app/tools/create-database.js && babel-node ./app/tools/populate-database.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlorianChretien/Organizer.git"
+  },
+  "author": "Florian Chrétien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlorianChretien/Organizer/issues"
+  },
+  "homepage": "https://github.com/FlorianChretien/Organizer#readme",
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "async": "^2.6.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babel-watch": "^2.0.7",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql2": "^1.5.3",
+    "sequelize": "^4.37.7",
+    "vue": "^2.5.16",
+    "vue-loader": "^15.0.10",
+    "webpack": "^4.8.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "webpack-cli": "^2.1.3"
+  }
+}
