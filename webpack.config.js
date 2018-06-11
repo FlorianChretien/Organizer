@@ -1,4 +1,5 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+var nodeExternals = require('webpack-node-externals');
 const path = require('path');
 
 module.exports = {
@@ -15,13 +16,8 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
+                exclude: /node_modules/,
+                loader: "babel-loader"
             },
             {
                 test: /\.css$/,
@@ -39,5 +35,13 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin()
-    ]
+    ],
+    target: 'node',
+    externals: [nodeExternals()],
+    node: {
+        fs: 'empty',
+        net: 'empty',
+        tls: 'empty',
+        dns: 'empty'
+    }
 };

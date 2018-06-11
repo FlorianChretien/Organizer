@@ -1,7 +1,7 @@
 import * as bodyParser from 'body-parser'
 import Express from 'express'
-import { Sequelize } from './lib/db'
-import { Utilisateur } from 'models'
+/*import { Sequelize } from './lib/db'
+import { Utilisateur } from 'models'*/
 
 const app = Express ();
 

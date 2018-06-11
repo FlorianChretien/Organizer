@@ -36,17 +36,32 @@
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
 /******/ 		}
 /******/ 	};
 /******/
 /******/ 	// define __esModule on exports
 /******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
 /******/ 	};
 /******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -76,9 +91,32 @@
   !*** ./app/index.js ***!
   \**********************/
 /*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _bodyParser = __webpack_require__(/*! body-parser */ \"body-parser\");\n\nvar bodyParser = _interopRequireWildcard(_bodyParser);\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }\n\n/*import { Sequelize } from './lib/db'\nimport { Utilisateur } from 'models'*/\n\nvar app = (0, _express2.default)();\n\napp.use(bodyParser.json());\napp.use(bodyParser.urlencoded({ extended: false }));\napp.use(function (req, res, next) {\n    res.header(\"Access-Control-Allow-Origin\", \"*\");\n    res.header(\"Access-Control-Allow-Headers\", \"Origin, X-Requested-With, Content-Type, Accept\");\n    next();\n});\n\napp.get('/', function (req, res) {\n    res.send('hello world');\n});\n\n//# sourceURL=webpack:///./app/index.js?");
+
+/***/ }),
+
+/***/ "body-parser":
+/*!******************************!*\
+  !*** external "body-parser" ***!
+  \******************************/
+/*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("throw new Error(\"Module build failed: Error: Requires Babel \\\"^7.0.0-0\\\", but was loaded with \\\"6.26.3\\\". If you are sure you have a compatible version of @babel/core, it is likely that something in your build process is loading the wrong version. Inspect the stack trace of this error to look for the first entry that doesn't mention \\\"@babel/core\\\" or \\\"babel-core\\\" to see what is calling Babel. (While processing preset: \\\"C:\\\\\\\\Users\\\\\\\\flori\\\\\\\\Desktop\\\\\\\\lab\\\\\\\\Organizer\\\\\\\\node_modules\\\\\\\\@babel\\\\\\\\preset-env\\\\\\\\lib\\\\\\\\index.js\\\")\\n    at throwVersionError (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\@babel\\\\helper-plugin-utils\\\\lib\\\\index.js:65:11)\\n    at Object.assertVersion (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\@babel\\\\helper-plugin-utils\\\\lib\\\\index.js:13:11)\\n    at _default (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\@babel\\\\preset-env\\\\lib\\\\index.js:150:7)\\n    at C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\@babel\\\\helper-plugin-utils\\\\lib\\\\index.js:19:12\\n    at C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-core\\\\lib\\\\transformation\\\\file\\\\options\\\\option-manager.js:317:46\\n    at Array.map (<anonymous>)\\n    at OptionManager.resolvePresets (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-core\\\\lib\\\\transformation\\\\file\\\\options\\\\option-manager.js:275:20)\\n    at OptionManager.mergePresets (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-core\\\\lib\\\\transformation\\\\file\\\\options\\\\option-manager.js:264:10)\\n    at OptionManager.mergeOptions (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-core\\\\lib\\\\transformation\\\\file\\\\options\\\\option-manager.js:249:14)\\n    at OptionManager.init (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-core\\\\lib\\\\transformation\\\\file\\\\options\\\\option-manager.js:368:12)\\n    at File.initOptions (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-core\\\\lib\\\\transformation\\\\file\\\\index.js:212:65)\\n    at new File (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-core\\\\lib\\\\transformation\\\\file\\\\index.js:135:24)\\n    at Pipeline.transform (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-core\\\\lib\\\\transformation\\\\pipeline.js:46:16)\\n    at transpile (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:50:20)\\n    at Object.module.exports (C:\\\\Users\\\\flori\\\\Desktop\\\\lab\\\\Organizer\\\\node_modules\\\\babel-loader\\\\lib\\\\index.js:173:20)\");\n\n//# sourceURL=webpack:///./app/index.js?");
+eval("module.exports = require(\"body-parser\");\n\n//# sourceURL=webpack:///external_%22body-parser%22?");
+
+/***/ }),
+
+/***/ "express":
+/*!**************************!*\
+  !*** external "express" ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///external_%22express%22?");
 
 /***/ })
 
